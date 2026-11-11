@@ -1,24 +1,18 @@
 ﻿using tyuiu.cources.programming.interfaces.Sprint4;
 namespace Tyuiu.ZubkovaMG.Sprint4.Task4.V29.Lib
 {
-    public class DataService : ISprint4Task4V29
+    public class DataService : ISprint4Task0V29
     {
-        public int Calculate(int[,] matrix)
+        public int GetSumOddArrEl(int[] array)
         {
-            int rows = matrix.GetUpperBound(0) + 1; 
-            int columns = matrix.GetLength(1);
             int sum = 0;
-            for (int i = 0; i < rows; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                for (int j = 0; j < columns; j++)
+                if (array[i] % 2 != 0)
                 {
-                    if (matrix[i, j] % 2 != 0)
-                    {
-                        sum += matrix[i, j];
-                    }
+                    sum += array[i];
                 }
             }
-
             return sum;
         }
     }
